@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import Clothes from '../views/clothing/Clothes.vue';
 import ManClothes from '../views/clothing/ManClothes.vue';
-import WomanCLothes from '../views/clothing/WomanCLothes.vue';
+import WomanClothes from '../views/clothing/WomanClothes.vue';
 import Electronics from '../views/categories/Electronics.vue';
 import Jewelery from '../views/categories/Jewelery.vue';
 import product from '../components/product.vue';
@@ -33,7 +33,7 @@ const router = createRouter({
     {
       path: '/woman',
       name: 'woman',
-      component: WomanCLothes,
+      component: WomanClothes,
     },
     {
       path: '/jewelery',
