@@ -3,6 +3,8 @@ import Home from '../views/Home.vue';
 import Clothes from '../views/clothing/Clothes.vue';
 import ManClothes from '../views/clothing/ManClothes.vue';
 import WomanCLothes from '../views/clothing/WomanCLothes.vue';
+import Electronics from '../views/categories/Electronics.vue';
+import Jewelery from '../views/categories/Jewelery.vue';
 import product from '../components/product.vue';
 import connection from '../components/connection.vue';
 import SingleProducts from '../components/SingleProduct/SingleProducts.vue';
@@ -24,14 +26,24 @@ const router = createRouter({
       component: Clothes,
     },
     {
-      path: '/menClothes',
-      name: 'menClothes',
+      path: '/man',
+      name: 'man',
       component: ManClothes,
     },
     {
-      path: '/womenClothes',
-      name: 'womenClothes',
+      path: '/woman',
+      name: 'woman',
       component: WomanCLothes,
+    },
+    {
+      path: '/jewelery',
+      name: 'jewelery',
+      component: Jewelery,
+    },
+    {
+      path: '/electronic',
+      name: 'electronic',
+      component: Electronics,
     },
 
     {

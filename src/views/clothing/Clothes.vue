@@ -3,15 +3,11 @@
     <div
       class="navclothes flex justify-center items-center text-black gap-x-12 bg-gray-200 py-3"
     >
-      <router-link to="/menClothes">Men CLothes</router-link>
-      <router-link to="/womenClothes">Women CLothes</router-link>
+      <router-link to="/man">Men CLothes</router-link>
+      <router-link to="/woman">Women CLothes</router-link>
     </div>
     <router-view />
-    <img
-      class="h-[600px] w-full"
-      src="../../../image/2020-08-14.jpg"
-      alt=""
-    />
+    <img class="h-[600px] w-full" src="../../../image/2020-08-14.jpg" alt="" />
 
     <div
       v-if="products.length"

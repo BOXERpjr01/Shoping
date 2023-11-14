@@ -3,8 +3,8 @@
     <div
       class="navclothes flex justify-center items-center text-black gap-x-12 bg-gray-200 py-3"
     >
-      <router-link to="/menClothes">Men CLothes</router-link>
-      <router-link to="/womenClothes">Women CLothes</router-link>
+      <router-link to="/man">Men CLothes</router-link>
+      <router-link to="/woman">Women CLothes</router-link>
     </div>
 
     <img class="h-[500px] w-full" src="../../../image/men.jpeg" alt="" />
@@ -40,7 +40,7 @@ const products = ref([]);
 onMounted(async () => {
   try {
     const all = await fetch(
-      "https://fakestoreapi.com/products/category/men's clothing"
+      "https://fakestoreapi.com/products/category/men's%20clothing"
     );
     const data = await all.json();
     products.value = data;
