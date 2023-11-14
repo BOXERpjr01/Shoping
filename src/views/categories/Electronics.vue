@@ -1,6 +1,6 @@
 <template>
   <div class="px-16">
-    <img class="h-[600px] w-full" src="../../../image/jewelry.jpg" alt="" />
+    <img class="h-[600px] w-full" src="../../../image/electronics.jpg" alt="" />
     <div
       v-if="products.length"
       class="grid grid-cols-4 pt-10 pb-12 justify-center gap-y-16"
