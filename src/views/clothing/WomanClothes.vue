@@ -6,7 +6,7 @@
       <router-link to="/menClothes">Men CLothes</router-link>
       <router-link to="/womenClothes">Women CLothes</router-link>
     </div>
-    <img class="h-[600px] w-full" src="../../../../image/women.jpg" alt="" />
+    <img class="h-[600px] w-full" src="../../../image/women.jpg" alt="" />
     <div
       v-if="products.length"
       class="grid grid-cols-4 pt-10 pb-12 justify-center gap-y-16"
@@ -33,7 +33,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import product from '../../../components/product.vue';
+import product from '../../components/product.vue';
 
 const products = ref([]);
 onMounted(async () => {

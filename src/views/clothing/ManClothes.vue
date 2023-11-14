@@ -1,18 +1,13 @@
 <template>
-  <div class="px-16 mt-5">
+  <div class="px-16">
     <div
       class="navclothes flex justify-center items-center text-black gap-x-12 bg-gray-200 py-3"
     >
       <router-link to="/menClothes">Men CLothes</router-link>
       <router-link to="/womenClothes">Women CLothes</router-link>
     </div>
-    <router-view />
-    <img
-      class="h-[600px] w-full"
-      src="../../../../image/2020-08-14.jpg"
-      alt=""
-    />
 
+    <img class="h-[500px] w-full" src="../../../image/men.jpeg" alt="" />
     <div
       v-if="products.length"
       class="grid grid-cols-4 pt-10 pb-12 justify-center gap-y-16"
@@ -38,14 +33,15 @@
 </template>
 
 <script setup>
-import product from '../../../components/product.vue';
 import { ref, onMounted } from 'vue';
+import product from '../../components/product.vue';
 
 const products = ref([]);
-
 onMounted(async () => {
   try {
-    const all = await fetch('https://fakestoreapi.com/products');
+    const all = await fetch(
+      "https://fakestoreapi.com/products/category/men's clothing"
+    );
     const data = await all.json();
     products.value = data;
     console.log(all);
@@ -53,7 +49,6 @@ onMounted(async () => {
     console.log(error);
   }
 });
-const isDisabled = ref(false);
 </script>
 
 <style>

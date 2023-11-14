@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-import Clothes from '../views/categories/clothing/Clothes.vue';
-import ManClothes from '../views/categories/clothing/ManClothes.vue';
-import WomanCLothes from '../views/categories/clothing/WomanCLothes.vue';
+import Clothes from '../views/clothing/Clothes.vue';
+import ManClothes from '../views/clothing/ManClothes.vue';
+import WomanCLothes from '../views/clothing/WomanCLothes.vue';
 import product from '../components/product.vue';
 import connection from '../components/connection.vue';
 import SingleProducts from '../components/SingleProduct/SingleProducts.vue';
