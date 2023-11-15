@@ -4,11 +4,11 @@
       <div class="flex flex-col justify-between items-center">
         <div class="group">
           <router-link :to="{ name: 'Single', params: { id: posts.id } }">
-            <div class="bg-grayf4 p-6">
+            <div class="divimage bg-grayf4 p-6">
               <img class="w-72 h-72" :src="posts.image" :alt="posts.title" />
             </div>
             <div
-              class="hidden text-white justify-center items-center -mt-[335px] h-[335px] w-[335px] absolute group-hover:flex group-hover:bg-gray-700/50"
+              class="hidden hoverelem text-white justify-center items-center -mt-[335px] h-[335px] w-[335px] absolute group-hover:flex group-hover:bg-gray-700/50"
             >
               View Product
             </div>

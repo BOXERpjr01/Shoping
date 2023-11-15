@@ -1,10 +1,30 @@
 <template>
   <div class="px-16 mt-5">
-    <img
-      class="h-[600px] w-full"
-      src="../../image/make-your-customers-happy-min_jpg.jpg"
-      alt=""
-    />
+    <div>
+      <div
+        class="bg-gray-200/20 h-[550px] w-[1392px] absolute flex px-20 justify-end items-center"
+      >
+        <div
+          class="p-16 w-600px flex flex-col justify-center bg-rose-950/50 text-white rounded"
+        >
+          <h1 class="font-semibold text-4xl mb-9">Products</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+            culpa molestiae illum explicabo exercitationem totam. Officiis
+            eveniet assumenda non minus, consequatur voluptatibus delectus
+            excepturi veniam vel amet qui exercitationem facilis?
+          </p>
+          <p class="mt-12">
+            A shoe that makes you this happy is more then a shoe
+          </p>
+        </div>
+      </div>
+      <img
+        class="h-[550px] w-full"
+        src="../../image/make-your-customers-happy-min_jpg.jpg"
+        alt=""
+      />
+    </div>
     <div class="flex justify-between text-center items-center mt-12">
       <button
         class="flex bg-grayddd items-center px-2 py-2 text-gray-400 font-semibold rounded"
@@ -42,7 +62,7 @@
     </div>
     <div
       v-if="products.length"
-      class="grid grid-cols-4 pt-10 pb-12 justify-center gap-y-16"
+      class="producting grid grid-cols-4 pt-10 pb-12 justify-center gap-y-16"
     >
       <div v-for="post in products" :key="post.id">
         <product :posts="post" />

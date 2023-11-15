@@ -1,23 +1,46 @@
 <template>
-  <div class="font-spartan cursor-default border-b-3">
-    <div class="pt-9 pb-4 px-[60px]">
+  <div class="font-spartan cursor-default border-b-3 w-full">
+    <div class="navpadding pt-9 pb-4 px-[60px]">
       <div class="nav flex items-center justify-between gap-x-60">
-        <div class="flex gap-x-28">
-          <h1 class="font-bold text-2xl text-start">Online Shop</h1>
-          <ul class="flex gap-x-16">
+        <div class="navbar flex w-[50%] justify-between">
+          <img
+            class="w-[80px]"
+            src="../../image/logo-removebg-preview.png"
+            alt=""
+          />
+          <ul class="navheader flex gap-x-[10%]">
             <router-link to="/">Home</router-link>
             <router-link to="/clothes">Clothes</router-link>
             <router-link to="/jewelery">Jewelery</router-link>
             <router-link to="/electronic">Electronics</router-link>
           </ul>
         </div>
-        <div class="flex gap-x-3 text-gray-400 justify-center items-center">
-          <p class="flex items-center font-semibold gap-x-2 mr-2">
-            <img src="../../image/phone.svg" alt="Phone Number" />(93)797028687
+        <div
+          class="navregister flex w-[50%] text-gray-400 justify-end items-center"
+        >
+          <p class="flex items-center text-sm font-semibold gap-x-2 mr-2">
+            <img
+              class="w-6"
+              src="../../image/phone.svg"
+              alt="Phone Number"
+            />(93)797028687
           </p>
           <router-link to="/register">Registration</router-link>
           <div class="h-7 w-[1.5px] bg-gray-400"></div>
           <router-link to="login">Login</router-link>
+          <div
+            class="group transition-all duration-500 delay-300 ease-linear w-10 flex justify-center"
+          >
+            <span
+              class="absolute ml-4 -mt-[3.5px] cursor-pointer bg-green-400 rounded-full px-[5px] text-xs text-white"
+              >5</span
+            >
+            <img
+              class="group-hover:cursor-pointer group-hover:w-7"
+              src="../../image/shopping-cart.svg"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </div>
