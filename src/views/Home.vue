@@ -1,20 +1,21 @@
 <template>
   <div class="px-16 mt-5">
+    <transition></transition>
     <div>
       <div
-        class="bg-gray-200/20 h-[550px] w-[1392px] absolute flex px-20 justify-end items-center"
+        class="h-[550px] w-[1392px] absolute flex px-20 justify-end items-center"
       >
         <div
-          class="p-16 w-600px flex flex-col justify-center bg-rose-950/50 text-white rounded"
+          class="p-16 w-500px flex flex-col justify-center bg-rose-950/30 text-white rounded"
         >
           <h1 class="font-semibold text-4xl mb-9">Products</h1>
-          <p>
+          <p class="text-sm">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
             culpa molestiae illum explicabo exercitationem totam. Officiis
             eveniet assumenda non minus, consequatur voluptatibus delectus
             excepturi veniam vel amet qui exercitationem facilis?
           </p>
-          <p class="mt-12">
+          <p class="mt-12 text-sm">
             A shoe that makes you this happy is more then a shoe
           </p>
         </div>
@@ -25,9 +26,9 @@
         alt=""
       />
     </div>
-    <div class="flex justify-between text-center items-center mt-12">
+    <div class="grid grid-cols-7 justify-between text-center items-center mt-6">
       <button
-        class="flex bg-grayddd items-center px-2 py-2 text-gray-400 font-semibold rounded"
+        class="flex bg-grayddd items-center px-2 py-[10px] text-gray-400 font-semibold rounded"
         disabled="isDisabled"
       >
         filter products
@@ -44,12 +45,13 @@
         </svg>
       </button>
       <h1
-        class="text-4xl font-semibold flex flex-col items-center justify-center"
+        class="text-4xl col-start-3 col-span-3 font-semibold flex flex-col items-center justify-center"
       >
-        All Clothes
-        <div class="h-[2.5px] w-20 rounded bg-red-900"></div>
+        OUR PRODUCTS
       </h1>
-      <div class="flex gap-x-3 items-center text-gray-500">
+      <div
+        class="flex col-start-6 col-span-2 gap-x-3 items-center justify-end text-gray-500"
+      >
         <span class="font-bold"> Sort by: </span>
         <div class="border-3 py-2 px-2 rounded font-semibold">
           <select name="" id="" class="pr-6">
@@ -59,13 +61,31 @@
           </select>
         </div>
       </div>
+      <div
+        class="h-[2.5px] col-start-4 w-20 rounded flex m-auto mt-4 bg-red-900"
+      ></div>
     </div>
+    <div class="flex justify-end items-center gap-x-3">
+      <transition name="slide-fade">
+        <input
+          class="border-[3px] rounded w-24 focus:w-80 py-[3px] px-[6px]"
+          v-model="search"
+          type="search"
+          name=""
+          id=""
+          placeholder="Search"
+        />
+      </transition>
+    </div>
+
     <div
-      v-if="products.length"
-      class="producting grid grid-cols-4 pt-10 pb-12 justify-center gap-y-16"
+      v-if="filteredProducts.length"
+      class="producting grid grid-cols-4 my-10 justify-center gap-x-3 gap-y-12"
     >
-      <div v-for="post in products" :key="post.id">
-        <product :posts="post" />
+      <div v-for="post in filteredProducts" :key="post">
+        <transition name="fade">
+          <product :posts="post" />
+        </transition>
       </div>
     </div>
     <div v-else class="flex items-center justify-center gap-x-3 mt-20">
@@ -86,7 +106,15 @@
 
 <script setup>
 import product from '../components/product.vue';
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
+import { defineComponent } from 'vue';
+import axios from 'axios';
+
+defineComponent({
+  name: 'home',
+  // Your component options here
+});
+const search = ref('');
 
 const products = ref([]);
 
@@ -101,6 +129,54 @@ onMounted(async () => {
   }
 });
 const isDisabled = ref(false);
+
+const filteredProducts = computed(() => {
+  return products.value.filter((product) =>
+    product.category.toLowerCase().includes(search.value.toLowerCase())
+  );
+});
+
+const searchProducts = () => {
+  console.log(filteredProducts);
+};
+
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+// serching
+
+// onMounted(async () => {
+//   try {
+//     const response = await axios.get('https://fakestoreapi.com/products');
+//     names.value = response.data.map((product) => product.title);
+//   } catch (error) {
+//     console.error('Failed to fetch names:', error);
+//     names.value = [];
+//   }
+// });
 </script>
 
-<style></style>
+<style>
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

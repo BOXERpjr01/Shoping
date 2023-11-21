@@ -1,11 +1,15 @@
 import './assets/css/tailwind.css';
+
 // import './assets/sass/Nav.css';
 // import './assets/sass/home.css';
 // import './assets/sass/Nav.css';
 
 import { createApp } from 'vue';
+
 import App from './App.vue';
 import router from './router';
+import { createPinia } from 'pinia';
+import index from './store/store';
 
 import vue3GoogleLogin from 'vue3-google-login';
 // rest of the code
@@ -20,4 +24,7 @@ const CLIENT_ID =
 app.use(vue3GoogleLogin, {
   clientId: CLIENT_ID,
 });
+const pinia = createPinia();
+app.use(pinia);
+app.use(index);
 app.mount('#app');

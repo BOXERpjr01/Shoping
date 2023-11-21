@@ -7,9 +7,48 @@
       <router-link to="/woman">Women CLothes</router-link>
     </div>
     <img class="h-[600px] w-full" src="../../../image/women.jpg" alt="" />
+    <div class="grid grid-cols-7 justify-between text-center items-center mt-6">
+      <button
+        class="flex bg-grayddd items-center px-2 py-[10px] text-gray-400 font-semibold rounded"
+        disabled="isDisabled"
+      >
+        filter products
+        <svg
+          class="ml-12"
+          xmlns="http://www.w3.org/2000/svg"
+          height="18"
+          fill="gray"
+          viewBox="0 0 256 256"
+        >
+          <path
+            d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"
+          ></path>
+        </svg>
+      </button>
+      <h1
+        class="text-4xl col-start-4 font-semibold flex flex-col items-center justify-center"
+      >
+        WOMEN'S clOUTHES
+      </h1>
+      <div
+        class="flex col-start-6 col-span-2 gap-x-3 items-center justify-end text-gray-500"
+      >
+        <span class="font-bold"> Sort by: </span>
+        <div class="border-3 py-2 px-2 rounded font-semibold">
+          <select name="" id="" class="pr-6">
+            <option value="">Featured products</option>
+            <option value="">Featured products</option>
+            <option value="">Featured products</option>
+          </select>
+        </div>
+      </div>
+      <div
+        class="h-[2.5px] col-start-4 w-20 rounded flex m-auto mt-4 bg-red-900"
+      ></div>
+    </div>
     <div
       v-if="products.length"
-      class="grid grid-cols-4 pt-10 pb-12 justify-center gap-y-16"
+      class="grid grid-cols-4 pt-10 pb-12 justify-center gap-x-3 gap-y-12"
     >
       <div v-for="post in products" :key="post.id">
         <product :posts="post" />

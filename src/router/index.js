@@ -1,15 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
+import Cart from '../views/Cart.vue';
 import Clothes from '../views/clothing/Clothes.vue';
 import ManClothes from '../views/clothing/ManClothes.vue';
 import WomanClothes from '../views/clothing/WomanClothes.vue';
 import Electronics from '../views/categories/Electronics.vue';
 import Jewelery from '../views/categories/Jewelery.vue';
+import SingleProducts from '../views/SingleProduct/SingleProducts.vue';
+import registration from '../views/registration/registration.vue';
+import login from '../views/registration/login.vue';
 import product from '../components/product.vue';
 import connection from '../components/connection.vue';
-import SingleProducts from '../components/SingleProduct/SingleProducts.vue';
-import registration from '../components/registration/registration.vue';
-import login from '../components/registration/login.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -55,10 +56,9 @@ const router = createRouter({
       path: '/connection',
       name: 'connection',
       component: connection,
-      props: true,
     },
     {
-      path: '/Single/:id',
+      path: '/detail/:id',
       name: 'Single',
       component: SingleProducts,
       props: true,
@@ -72,6 +72,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: login,
+    },
+    {
+      path: '/cart',
+      name: 'Cart',
+      component: Cart,
     },
   ],
 });

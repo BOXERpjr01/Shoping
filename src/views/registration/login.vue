@@ -1,18 +1,23 @@
 <template>
-  <div>
+  <div class="">
     <transition name="fade">
       <div
-        class="MediaAllContent bg-Charcoal_Grey py-10 fixed top-0 left-0 h-full w-full"
+        class="MediaAllContent py-20 bg-Charcoal_Grey overflow-y-scroll top-0 left-0 w-full h-full"
       >
         <div class="MediaContents flex h-full justify-center items-center">
           <div
-            class="MediaCildcontents flex flex-col bg-White py-4 p-10 gap-y-5 rounded-l"
+            class="MediaCildcontents flex flex-col bg-White pt-5 p-10 gap-y-5 rounded-l"
           >
-            <h3 class="font-bold text-base">Online Shope</h3>
-            <p class="text-2xl font-semibold mt-[55px]">Create account</p>
+            <img class="w-[60px] mb-12" src="../../../image/logo.jpg" alt="" />
+            <button
+              @click="login"
+              class="flex items-center justify-center gap-x-3 border-[2px] py-2 rounded"
+            >
+              <img src="../../../image/google.svg" alt="" />Login Using Google
+            </button>
+
             <!-- Sign In with the google account or gmail -->
-            <!-- Sign In with the google account or gmail -->
-            <div class="flex justify-center h-16">
+            <!-- <div class="flex justify-center h-16">
               <div
                 v-if="loggedIn"
                 class="flex justify-center gap-x-[22px] items-center w-[200px] bg-grayddd py-2 rounded-full"
@@ -23,11 +28,16 @@
                   :alt="user.name"
                 />
                 <span class="text-xs">{{ user.name }}</span>
-              </div>
-              <div v-else class="flex items-center justify-center">
+              </div> -->
+            <!-- <div v-else class="flex items-center justify-center">
                 <GoogleLogin :callback="callback" prompt auto-login />
               </div>
-            </div>
+            </div> -->
+            <!-- <button @click="login"
+              class="border py-2 flex justify-center items-center gap-x-3 rounded text-ms font-bold"
+            >
+              <img src="../../../image/google.svg" alt="" /> Sign up with Google
+            </button> -->
 
             <div class="flex justify-center items-center gap-x-3">
               <div class="bg-gray-400 h-[1.5px] w-full"></div>
@@ -35,14 +45,6 @@
               <div class="bg-gray-400 h-[1.5px] w-full"></div>
             </div>
             <form action="">
-              <div class="flex flex-col">
-                <label for="">First Name*</label>
-                <input
-                  class="MedaiInput px-2 py-1 rounded border-[2px]"
-                  type="text"
-                  placeholder="Enter your first name"
-                />
-              </div>
               <div class="flex flex-col my-2">
                 <label for="" class="flex justify-between"
                   >Email*
@@ -55,7 +57,7 @@
                   class="MedaiInput px-2 py-1 rounded border-[2px]"
                   type="emial"
                   required
-                  placeholder="email@company.com"
+                  placeholder="Enter your email"
                 />
               </div>
               <div class="flex flex-col">
@@ -63,7 +65,7 @@
                 <input
                   class="MedaiInput px-2 w-80 py-1 rounded border-[2px]"
                   type="text"
-                  placeholder="Creat a password"
+                  placeholder="Enter your password"
                 />
               </div>
             </form>
@@ -72,14 +74,14 @@
               @click="toggleModel"
               >Creat Account</LoadingButton
             >
-            <div class="navregiter flex justify-center items-center">
-              <p>Already hava an account?</p>
-              <router-link to="/login">Log In</router-link>
+            <div class="navlogin flex gap-x-3 justify-center items-center">
+              <p class="text-ms">Create new Account?</p>
+              <router-link to="/register">Regiter</router-link>
             </div>
             <router-link to="/">Back</router-link>
           </div>
           <img
-            class="h-[653px] w-[650px] rounded-r"
+            class="h-[549px] w-500px rounded-r"
             src="../../../image/Register.jpg"
             alt=""
           />
@@ -90,10 +92,11 @@
 </template>
 
 <script setup>
-import LoadingButton from '../button/LoadingButton.vue';
+import LoadingButton from '../../components/button/LoadingButton.vue';
 import { ref, computed, onMounted } from 'vue';
-import { decodeCredential } from 'vue3-google-login';
-// import { googleTokenLogin } from "vue3-google-login";
+import { googleSdkLoaded } from 'vue3-google-login';
+// import { decodeCredential } from 'vue3-google-login';
+// import { googleTokenLogin } from 'vue3-google-login';
 // defineProps({
 //   header: String,
 //   text: String,
@@ -119,7 +122,7 @@ defineExpose({ closemodal });
 const Email = ref('');
 const emailError = ref('');
 const toggleModel = () => {
-  const isValidEmail = Email => {
+  const isValidEmail = (Email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     return emailRegex.test(Email);
@@ -141,25 +144,51 @@ const EmailErrorStyle = computed(() => {
   return emailError.value;
 });
 ////////// Google API google login account
-const loggedIn = ref(false);
-const user = ref(null);
+// const loggedIn = ref(false);
+// const user = ref(null);
 
-const callback = response => {
-  console.log('Logged in');
-  console.log(response);
-  user.value = decodeCredential(response.credential);
-  console.log(user);
-  loggedIn.value = true;
+// const callback = response => {
+//   console.log('Logged in');
+//   console.log(response);
+//   user.value = decodeCredential(response.credential);
+//   console.log(user);
+//   loggedIn.value = true;
+// };
+const login = () => {
+  googleSdkLoaded((google) => {
+    google.accounts.oauth2
+      .initCodeClient({
+        client_id:
+          '580283333572-hufpae42qvv7odqu4pkm0rq9hbfaf2v9.apps.googleusercontent.com',
+        scope: 'email profile openid',
+        callback: (response) => {
+          console.log('Handle the response', response);
+        },
+      })
+      .requestCode();
+  });
 };
 </script>
 <style>
-.navregiter a {
+.navlogin a {
   text-decoration: underline;
+  font-size: 14px;
 }
 .Errorstyle {
   background-color: rgba(255, 99, 71, 0.262);
   border: 2.5px solid rgba(175, 5, 5, 0.342);
   color: rgba(224, 111, 91, 0.828);
   outline-color: rgba(175, 5, 5, 0.342);
+}
+#google-signin-button {
+  display: inline-block;
+  background: #4285f4;
+  color: #fff;
+  border-radius: 2px;
+  padding: 12px 24px;
+  cursor: pointer;
+}
+.MediaAllContent::-webkit-scrollbar {
+  display: none;
 }
 </style>

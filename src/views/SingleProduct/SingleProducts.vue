@@ -7,29 +7,23 @@
             <div class="w-500px h-500px">
               <img :src="item.image" :alt="item.title" />
             </div>
-            <div class="flex justify-between mt-12">
-              <img src="../../../image/caret-left.svg" alt="" />
-              <img class="w-10" :src="item.image" :alt="item.title" />
-              <img class="w-10" :src="item.image" :alt="item.title" />
-              <img class="w-10" :src="item.image" :alt="item.title" />
-              <img src="../../../image/caret-right.svg" alt="" />
-            </div>
           </div>
-          <div class="flex flex-col w-400px gap-y-8">
-            <div
-              class="flex justify-between w-500px font-semibold text-3xl py-2 rounded"
-            >
-              <p class="font-bold flex flex-col">
-                {{ item.category }}
-
-                <span v-if="item.rating">{{
-                  starRating(item.rating.rate)
-                }}</span>
-              </p>
-              <span class="font-medium">${{ item.price }}</span>
-            </div>
-            <p class="text-base font-bold text-gray-400">{{ item.title }}.</p>
+          <div class="flex flex-col w-400px gap-y-10">
             <div>
+              <div
+                class="flex justify-between w-500px font-semibold text-3xl py-2 rounded"
+              >
+                <p class="font-bold flex flex-col">
+                  {{ item.category }}
+                  <span v-if="item.rating" class="text-sm mt-2">{{
+                    starRating(item.rating.rate)
+                  }}</span>
+                </p>
+                <span class="font-medium">${{ item.price }}</span>
+              </div>
+              <p class="text-base font-bold text-gray-400">{{ item.title }}.</p>
+            </div>
+            <div class="mt-5">
               <span>WIDTH:</span>
               <div class="flex gap-3">
                 <button
@@ -47,16 +41,13 @@
                 </button>
               </div>
             </div>
-            <div class="w-300px">
+            <div class="w-300px h-[220px]">
               <span>SIZE:</span>
               <ul class="grid grid-cols-5 gap-2 mt-3">
                 <li v-for="item in list" :key="item.id">
                   <span
                     v-if="show"
-                    class="p-[25px] border-3 cursor-not-allowed bg-gray-500/40 absolute"
-                  ></span>
-                  <span
-                    class="border-3 border-gray-300 py-3 flex justify-center px-[17px]"
+                    class="transation-all transition-opacity duration-700 cursor-pointer border-3 border-gray-300 py-3 flex justify-center px-[17px]"
                     :class="{ activate: item.clicked }"
                     @click="handlClicked(item)"
                   >
@@ -66,14 +57,53 @@
               </ul>
             </div>
 
-            <LoadingButton
-              @click="onSubmit"
-              :is-loading="isLoading"
-              class="text-white w-300px text-center mt-12 bg-rose-600 font-semibold py-2 hover:bg-rose-600/75 rounded"
-            >
-              ADD TO CART
-            </LoadingButton>
+            <router-link to="/cart">
+              <LoadingButton
+                @click="addToCart"
+                :is-loading="isLoading"
+                class="text-white w-300px text-center mt-12 bg-rose-600 font-semibold py-2 hover:bg-rose-600/75 rounded"
+              >
+                ADD TO CART
+              </LoadingButton>
+            </router-link>
           </div>
+        </div>
+        <div class="grid grid-cols-12 justify-center items-center px-12 mb-12">
+          <span class="flex items-end justify-end">
+            <img
+              class=""
+              @click="scrollToPrevious"
+              src="../../../image/caret-left.svg"
+              alt=""
+            />
+          </span>
+
+          <div
+            ref="scrollContent"
+            class="carousel-content flex col-span-4 overflow-x-scroll"
+          >
+            <div class="flex-none grid grid-cols-5">
+              <img class="w-12 mx-5" :src="item.image" :alt="item.title" />
+              <img class="w-12 mx-5" :src="item.image" :alt="item.title" />
+              <img class="w-12 mx-5" :src="item.image" :alt="item.title" />
+              <img class="w-12 mx-5" :src="item.image" :alt="item.title" />
+              <img class="w-12 mx-5" :src="item.image" :alt="item.title" />
+            </div>
+            <div class="flex-none grid grid-cols-5">
+              <img class="w-12 mx-5" :src="item.image" :alt="item.title" />
+              <img class="w-12 mx-5" :src="item.image" :alt="item.title" />
+              <img class="w-12 mx-5" :src="item.image" :alt="item.title" />
+              <img class="w-12 mx-5" :src="item.image" :alt="item.title" />
+              <img class="w-12 mx-5" :src="item.image" :alt="item.title" />
+            </div>
+          </div>
+          <span class="flex items-center justify-start col-start-6">
+            <img
+              @click="scrollToNext"
+              src="../../../image/caret-right.svg"
+              alt=""
+            />
+          </span>
         </div>
 
         <div class="flex justify-between mt-6 px-12">
@@ -115,18 +145,33 @@
 </template>
 
 <script setup>
-import { defineProps, onMounted, ref, computed } from "vue";
-import LoadingButton from "../../components/button/LoadingButton.vue";
+import { defineProps, onMounted, ref, computed, getCurrentInstance } from 'vue';
 
-const props = defineProps(["id"]);
+import { useRouter, useRoute } from 'vue-router';
+import { defineComponent } from 'vue';
+import { useStore } from 'vuex';
+import LoadingButton from '../../components/button/LoadingButton.vue';
 
-const item = ref([]);
-onMounted(async () => {
+const route = useRoute();
+const store = useStore();
+defineComponent({
+  name: 'Single',
+  // Your component options here
+});
+
+const props = defineProps(['id']);
+const productId = props.id;
+
+const item = ref(null);
+const fetchProduct = async () => {
   try {
-    const products = await fetch(
-      "https://fakestoreapi.com/products/" + props.id
+    const response = await fetch(
+      `https://fakestoreapi.com/products/${productId}`
     );
-    const data = await products.json();
+    if (!response.ok) {
+      throw new Error('Failed to fetch product');
+    }
+    const data = await response.json();
     item.value = data;
     console.log(item);
     item.value = data.map((item) => ({
@@ -138,25 +183,30 @@ onMounted(async () => {
   } catch (error) {
     console.log(error);
   }
-});
+};
+
+fetchProduct();
+
+const isLoading = ref(false);
+const addToCart = () => {
+  const payload = item.value;
+  store.commit('addToCart', payload);
+  isLoading.value = true;
+  setTimeout(() => (isLoading.value = false), 1000);
+  console.log('text');
+};
 
 function starRating(rating) {
   const roundedRate = Math.round(rating);
-  return "⭐".repeat(roundedRate);
+  return '⭐'.repeat(roundedRate);
 }
 
-const isLoading = ref(false);
-const onSubmit = () => {
-  isLoading.value = true;
-  setTimeout(() => (isLoading.value = false), 1000);
-};
-
 const isDisabled = ref(false);
-const btnclass = ref("");
-const show = ref(true);
+const btnclass = ref('');
+const show = ref(false);
 const click = () => {
   show.value = !show.value;
-  btnclass.value = btnclass.value === "" ? "style" : "";
+  btnclass.value = btnclass.value === '' ? 'style' : '';
 };
 
 const list = ref([
@@ -176,12 +226,27 @@ const list = ref([
 const handlClicked = (item) => {
   item.clicked = !item.clicked;
 };
+//////////////////////scrolling
+const scrollContent = ref(null);
+
+onMounted(() => {
+  scrollContent.value = document.querySelector('.carousel-content');
+});
+
+const scrollToPrevious = () => {
+  if (scrollContent.value) {
+    scrollContent.value.scrollLeft -= 100;
+  }
+  console.log('scrollp');
+};
+const scrollToNext = () => {
+  if (scrollContent.value) {
+    scrollContent.value.scrollLeft += 100;
+  }
+  console.log('scrolln');
+};
 </script>
 <style>
-span {
-  cursor: pointer;
-}
-
 span.activate {
   background-color: inherit;
   --tw-border-opacity: 1;
@@ -200,5 +265,8 @@ span.activate {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+.carousel-content::-webkit-scrollbar {
+  display: none;
 }
 </style>
