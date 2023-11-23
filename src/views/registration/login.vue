@@ -2,42 +2,23 @@
   <div class="">
     <transition name="fade">
       <div
-        class="MediaAllContent py-20 bg-Charcoal_Grey overflow-y-scroll top-0 left-0 w-full h-full"
+        class="MediaAllContent bg-Charcoal_Grey fixed overflow-y-scroll z-50 top-0 left-0 w-full h-full"
       >
         <div class="MediaContents flex h-full justify-center items-center">
           <div
-            class="MediaCildcontents flex flex-col bg-White pt-5 p-10 gap-y-5 rounded-l"
+            class="MediaCildcontents p-5 flex flex-col bg-White gap-y-5 rounded-l"
           >
             <img class="w-[60px] mb-12" src="../../../image/logo.jpg" alt="" />
             <button
               @click="login"
-              class="flex items-center justify-center gap-x-3 border-[2px] py-2 rounded"
+              class="buttonlogin flex items-center justify-center gap-x-3 border-[2px] py-2 rounded"
             >
-              <img src="../../../image/google.svg" alt="" />Login Using Google
+              <img src="../../../image/google.svg" alt="" />
+              <p>Login Using Google</p>
             </button>
 
             <!-- Sign In with the google account or gmail -->
-            <!-- <div class="flex justify-center h-16">
-              <div
-                v-if="loggedIn"
-                class="flex justify-center gap-x-[22px] items-center w-[200px] bg-grayddd py-2 rounded-full"
-              >
-                <img
-                  class="rounded-full w-12"
-                  :src="user.picture"
-                  :alt="user.name"
-                />
-                <span class="text-xs">{{ user.name }}</span>
-              </div> -->
-            <!-- <div v-else class="flex items-center justify-center">
-                <GoogleLogin :callback="callback" prompt auto-login />
-              </div>
-            </div> -->
-            <!-- <button @click="login"
-              class="border py-2 flex justify-center items-center gap-x-3 rounded text-ms font-bold"
-            >
-              <img src="../../../image/google.svg" alt="" /> Sign up with Google
-            </button> -->
+            <!-- <div class="flex justify-center h-16">=-->
 
             <div class="flex justify-center items-center gap-x-3">
               <div class="bg-gray-400 h-[1.5px] w-full"></div>
@@ -45,7 +26,7 @@
               <div class="bg-gray-400 h-[1.5px] w-full"></div>
             </div>
             <form action="">
-              <div class="flex flex-col my-2">
+              <div class="emailform flex flex-col my-2">
                 <label for="" class="flex justify-between"
                   >Email*
                   <span class="text-xs mt-1 text-Tomato">
@@ -60,7 +41,7 @@
                   placeholder="Enter your email"
                 />
               </div>
-              <div class="flex flex-col">
+              <div class="passform flex flex-col">
                 <label for="">Password*</label>
                 <input
                   class="MedaiInput px-2 w-80 py-1 rounded border-[2px]"
@@ -81,7 +62,7 @@
             <router-link to="/">Back</router-link>
           </div>
           <img
-            class="h-[549px] w-500px rounded-r"
+            class="loginimage h-[74.6%] w-[40%] rounded-r"
             src="../../../image/Register.jpg"
             alt=""
           />

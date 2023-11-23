@@ -2,7 +2,7 @@
   <div>
     <transition name="fade">
       <div
-        class="MediaAllContentregister overflow-y-scroll bg-Charcoal_Grey py-10 top-0 left-0 h-full w-full"
+        class="MediaAllContentregister overflow-y-scroll bg-Charcoal_Grey py-10 fixed z-50 top-0 left-0 h-full w-full"
       >
         <div class="MediaContents flex h-full justify-center items-center">
           <div
@@ -35,7 +35,7 @@
                 />
               </div>
 
-              <div class="flex flex-col my-2">
+              <div class="registerinput flex flex-col my-2">
                 <label for="" class="flex justify-between"
                   >Email*
                   <span class="text-xs mt-1 text-Tomato">
@@ -74,7 +74,7 @@
           </div>
 
           <img
-            class="h-[635px] w-[650px] rounded-r"
+            class="registerimage h-[101.2%] w-[45%] rounded-r"
             src="../../../image/Register.jpg"
             alt=""
           />

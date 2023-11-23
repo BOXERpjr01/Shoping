@@ -6,7 +6,6 @@
 
 <script setup>
 import API from './views/API.vue';
-import CartaddRemove from './components/cart/CartaddRemove.vue';
 </script>
 
 <style lang="scss" scoped></style>

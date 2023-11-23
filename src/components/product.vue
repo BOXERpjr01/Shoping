@@ -5,29 +5,31 @@
         <div class="flex flex-col justify-between items-center">
           <div
             @click="addSinglePage(posts.id)"
-            class="group w-full py-10 bg-grayf4"
+            class="group producchildcont w-full py-10 relative bg-grayf4"
           >
             <!-- <router-link :to="{ name: 'Single', params: { id: posts.id } }"> -->
             <div
-              class="hidden hoverelem cursor-pointer text-white font-bold text-xl justify-center items-center -mt-[40.5px] h-[335px] w-[340px] absolute group-hover:flex group-hover:bg-gray-700/50"
+              class="hoverelem hidden cursor-pointer text-white font-bold text-xl justify-center items-center -mt-[40.5px] h-full w-full absolute group-hover:flex group-hover:bg-gray-700/50 bg-gray-700/50"
             >
               VIEW PRODUCT
             </div>
-            <div class="divimage flex justify-center items-center">
+            <div class="divimage flex justify-center items-center bg-grayf4">
               <img class="w-64 h-64" :src="posts.image" :alt="posts.title" />
             </div>
             <!-- </router-link> -->
           </div>
           <ul class="flex flex-col w-full justify-between pr-4 gap-y-1">
-            <span class="font-semibold text-xl text-black mt-3">{{
+            <span class="title font-semibold text-xl text-black mt-3">{{
               snippet
             }}</span>
-            <span class="font-semibold text-sm text-gray-300">{{
+            <span class="categoreis font-semibold text-sm text-gray-300">{{
               posts.category
             }}</span>
             <p class="flex justify-between items-center">
-              <span class="font-semibold text-xl">${{ posts.price }}</span>
-              <span>{{ starRating }}</span>
+              <span class="price font-semibold text-xl"
+                >${{ posts.price }}</span
+              >
+              <span class="starrating">{{ starRating }}</span>
             </p>
           </ul>
         </div>

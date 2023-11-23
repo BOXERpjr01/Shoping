@@ -1,29 +1,29 @@
 <template>
-  <div class="border-t-3 py-8 px-20">
+  <div class="sigle border-t-3 mt-24 py-8 px-20">
     <transition name="fade">
       <div v-if="item">
-        <div class="flex justify-center gap-x-40 items-center py-10">
-          <div>
-            <div class="w-500px h-500px">
+        <div class="singlepage flex justify-center gap-x-40 items-center py-10">
+          <div class="divisinglemage">
+            <div class="sngleimage w-500px h-500px">
               <img :src="item.image" :alt="item.title" />
             </div>
           </div>
-          <div class="flex flex-col w-400px gap-y-10">
-            <div>
+          <div class="allsingletext flex flex-col w-400px gap-y-10">
+            <section class="sectiontitle">
               <div
                 class="flex justify-between w-500px font-semibold text-3xl py-2 rounded"
               >
-                <p class="font-bold flex flex-col">
+                <p class="singlecategoreis font-bold flex flex-col">
                   {{ item.category }}
-                  <span v-if="item.rating" class="text-sm mt-2">{{
+                  <span v-if="item.rating" class="singlerate text-sm mt-2">{{
                     starRating(item.rating.rate)
                   }}</span>
                 </p>
-                <span class="font-medium">${{ item.price }}</span>
+                <span class="singleprice font-medium">${{ item.price }}</span>
               </div>
               <p class="text-base font-bold text-gray-400">{{ item.title }}.</p>
-            </div>
-            <div class="mt-5">
+            </section>
+            <section class="sectionbtns mt-5">
               <span>WIDTH:</span>
               <div class="flex gap-3">
                 <button
@@ -40,8 +40,8 @@
                   WIDTH NOT AVAILABE
                 </button>
               </div>
-            </div>
-            <div class="w-300px h-[220px]">
+            </section>
+            <div class="singlesize w-300px h-[220px]">
               <span>SIZE:</span>
               <ul class="grid grid-cols-5 gap-2 mt-3">
                 <li v-for="item in list" :key="item.id">
@@ -57,18 +57,18 @@
               </ul>
             </div>
 
-            <router-link to="/cart">
-              <LoadingButton
-                @click="addToCart"
-                :is-loading="isLoading"
-                class="text-white w-300px text-center mt-12 bg-rose-600 font-semibold py-2 hover:bg-rose-600/75 rounded"
-              >
-                ADD TO CART
-              </LoadingButton>
-            </router-link>
+            <LoadingButton
+              @click="addToCart"
+              :is-loading="isLoading"
+              class="LoadingButton text-white w-300px text-center mt-12 bg-rose-600 font-semibold py-2 hover:bg-rose-600/75 rounded"
+            >
+              ADD TO CART
+            </LoadingButton>
           </div>
         </div>
-        <div class="grid grid-cols-12 justify-center items-center px-12 mb-12">
+        <div
+          class="scrollingimages grid grid-cols-12 justify-center items-center px-12 mb-12"
+        >
           <span class="flex items-end justify-end">
             <img
               class=""
@@ -106,23 +106,21 @@
           </span>
         </div>
 
-        <div class="flex justify-between mt-6 px-12">
+        <div
+          class="singlebtns text-[1vw] flex gap-x-2 justify-between mt-6 px-12"
+        >
           <button
-            class="bg-grayf4 py-4 px-12 text-sm rounded text-gray-500 font-bold"
+            class="bg-grayf4 text-xs py-4 px-12 rounded text-gray-500 font-bold"
           >
-            <i class="fa-solid fa-calendar fa-2xl mr-4"></i>
+            <i class="fa-solid fa-calendar fa-xl mr-4"></i>
             Usally ships within ONE business day
           </button>
-          <button
-            class="bg-grayf4 py-4 px-12 text-sm rounded text-gray-500 font-bold"
-          >
-            <i class="fa-solid fa-box fa-2xl mr-4"></i>
+          <button class="bg-grayf4 py-4 px-12 rounded text-gray-500 font-bold">
+            <i class="fa-solid fa-box fa-xl mr-4"></i>
             Free returns & exchanges for 45 days
           </button>
-          <button
-            class="bg-grayf4 py-4 px-12 text-sm rounded text-gray-500 font-bold"
-          >
-            <i class="fa-solid fa-truck fa-2xl mr-4"></i>
+          <button class="bg-grayf4 py-4 px-12 rounded text-gray-500 font-bold">
+            <i class="fa-solid fa-truck fa-xl mr-4"></i>
             Free shiping on all ground domanatic orders
           </button>
         </div>
@@ -147,12 +145,11 @@
 <script setup>
 import { defineProps, onMounted, ref, computed, getCurrentInstance } from 'vue';
 
-import { useRouter, useRoute } from 'vue-router';
 import { defineComponent } from 'vue';
 import { useStore } from 'vuex';
 import LoadingButton from '../../components/button/LoadingButton.vue';
-
-const route = useRoute();
+import { useRouter } from 'vue-router';
+const router = useRouter();
 const store = useStore();
 defineComponent({
   name: 'Single',
@@ -189,6 +186,7 @@ fetchProduct();
 
 const isLoading = ref(false);
 const addToCart = () => {
+  router.push({ name: 'Cart' });
   const payload = item.value;
   store.commit('addToCart', payload);
   isLoading.value = true;

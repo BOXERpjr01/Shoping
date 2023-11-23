@@ -1,34 +1,33 @@
 <template>
-  <div class="px-16 mt-5">
-    <transition></transition>
-    <div>
+  <div class="home px-16 mt-32">
+    <div class="homedivimage">
       <div
-        class="h-[550px] w-[1392px] absolute flex px-20 justify-end items-center"
+        class="homemedai h-[550px] w-[1424px] right-[63px] z-0 absolute flex px-20 justify-end items-center"
       >
         <div
-          class="p-16 w-500px flex flex-col justify-center bg-rose-950/30 text-white rounded"
+          class="p-16 w-500px flex flex-col text-[1vw] justify-center bg-rose-950/30 text-white rounded"
         >
-          <h1 class="font-semibold text-4xl mb-9">Products</h1>
-          <p class="text-sm">
+          <h1 class="font-semibold text-[3vw] mb-[3vw]">Products</h1>
+          <p class="lorem text-sm">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
             culpa molestiae illum explicabo exercitationem totam. Officiis
             eveniet assumenda non minus, consequatur voluptatibus delectus
             excepturi veniam vel amet qui exercitationem facilis?
           </p>
-          <p class="mt-12 text-sm">
+          <p class="homepragraph mt-[2vw] text-[1vw]">
             A shoe that makes you this happy is more then a shoe
           </p>
         </div>
       </div>
       <img
-        class="h-[550px] w-full"
+        class="homeimage h-[550px] w-full"
         src="../../image/make-your-customers-happy-min_jpg.jpg"
         alt=""
       />
     </div>
-    <div class="grid grid-cols-7 justify-between text-center items-center mt-6">
+    <div class="homeproduct flex justify-between items-start mt-6">
       <button
-        class="flex bg-grayddd items-center px-2 py-[10px] text-gray-400 font-semibold rounded"
+        class="homebtns flex bg-grayddd items-center justify-between px-2 py-[10px] text-gray-400 font-semibold rounded"
         disabled="isDisabled"
       >
         filter products
@@ -45,38 +44,39 @@
         </svg>
       </button>
       <h1
-        class="text-4xl col-start-3 col-span-3 font-semibold flex flex-col items-center justify-center"
+        class="hommehead text-[2.4vw] col-start-3 col-span-3 font-semibold flex flex-col items-center justify-center"
       >
         OUR PRODUCTS
       </h1>
-      <div
-        class="flex col-start-6 col-span-2 gap-x-3 items-center justify-end text-gray-500"
-      >
-        <span class="font-bold"> Sort by: </span>
-        <div class="border-3 py-2 px-2 rounded font-semibold">
-          <select name="" id="" class="pr-6">
-            <option value="">Featured products</option>
-            <option value="">Featured products</option>
-            <option value="">Featured products</option>
-          </select>
+      <div class="homeselection flex flex-col gap-4">
+        <div
+          class="flex col-start-6 col-span-2 gap-x-3 items-center justify-end text-gray-500"
+        >
+          <span class="font-bold"> Sort by: </span>
+          <div class="border-3 py-2 px-2 rounded font-semibold">
+            <select name="" id="" class="pr-6">
+              <option value="">Featured products</option>
+              <option value="">Featured products</option>
+              <option value="">Featured products</option>
+            </select>
+          </div>
         </div>
       </div>
-      <div
-        class="h-[2.5px] col-start-4 w-20 rounded flex m-auto mt-4 bg-red-900"
-      ></div>
     </div>
-    <div class="flex justify-end items-center gap-x-3">
-      <transition name="slide-fade">
-        <input
-          class="border-[3px] rounded w-24 focus:w-80 py-[3px] px-[6px]"
-          v-model="search"
-          type="search"
-          name=""
-          id=""
-          placeholder="Search"
-        />
-      </transition>
+    <div class="redline flex justify-center">
+      <div class="h-[0.2vw] w-[5.5vw] -ml-20 rounded mt-4 bg-red-900"></div>
     </div>
+
+    <transition name="slide-fade">
+      <input
+        class="search border-[3px] flex justify-end items-end rounded w-24 focus:w-80 py-[3px] px-[6px]"
+        v-model="search"
+        type="search"
+        name=""
+        id=""
+        placeholder="Search"
+      />
+    </transition>
 
     <div
       v-if="filteredProducts.length"

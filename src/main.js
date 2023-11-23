@@ -1,6 +1,7 @@
 import './assets/css/tailwind.css';
 
-// import './assets/sass/Nav.css';
+import './assets/sass/style.css';
+import './assets/sass/style.css';
 // import './assets/sass/home.css';
 // import './assets/sass/Nav.css';
 

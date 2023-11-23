@@ -1,0 +1,1021 @@
+@media (max-width: 2730px) and (min-width: 2000px) {
+  .hoverelem {
+    height: 100%;
+    width: 100%;
+  }
+  .singlepage {
+    justify-content: space-between;
+    padding-left: 17vw;
+    padding-right: 17vw;
+  }
+  .loginimage {
+    width: 20%;
+    height: 53.2%;
+  }
+  .registerimage {
+    width: 26%;
+    height: 69.4%;
+  }
+}
+@media (max-width: 2000px) and (min-width: 1700px) {
+  .hoverelem {
+    height: 100%;
+    width: 100%;
+  }
+  .registerimage {
+    width: 36%;
+    height: 69.4%;
+  }
+}
+@media (max-width: 1700px) and (min-width: 1600px) {
+  .hoverelem {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 1500px) {
+  .producchildcont {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .hoverelem {
+    margin-left: -46px;
+    height: 100%;
+    width: 100%;
+  }
+  .homeimage,
+  .clothesimage,
+  .womenimage,
+  .jeweleryimage,
+  .electronicsimage,
+  .menimage {
+    position: relative;
+    height: 100%;
+  }
+  .homemedai {
+    left: 4.3%;
+    margin-right: 10%;
+    width: 91.5vw;
+    height: 44.8vw;
+    padding: 5vw;
+  }
+  .homemedai div {
+    width: 40%;
+  }
+  .homemedai div h1 {
+    margin-bottom: 3vw;
+  }
+  .clothesbtn,
+  .homebtns {
+    font-size: 1.5vw;
+  }
+}
+@media (max-width: 1280px) {
+  .producchildcont {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .hoverelem {
+    margin-left: -64px;
+    height: 100%;
+    width: 100%;
+  }
+  .navheader {
+    padding-left: 30px;
+    font-size: 1.3vw;
+  }
+  .homemedai div {
+    padding: 4vw;
+  }
+  .homebtns {
+    font-size: 1.5vw;
+  }
+  .singlepage {
+    column-gap: 30px;
+    justify-content: space-between;
+    padding-right: 70px;
+    padding-left: 40px;
+  }
+  /* loginform */
+}
+@media (max-width: 1441px) {
+  .hoverelem {
+    height: 100%;
+    width: 100%;
+  }
+  /* loginform */
+  .MedaiInput {
+    width: 100%;
+  }
+  .loginimage {
+    width: 40%;
+    height: 96.4%;
+  }
+  .registerimage {
+    width: 40%;
+    height: 136%;
+  }
+}
+
+@media (max-width: 1025px) {
+  .navheader {
+    position: absolute;
+    z-index: 100;
+    top: 80px;
+    left: -140px;
+    font-size: 14px;
+    padding: 15px;
+    display: flex;
+    row-gap: 12px;
+    background-color: rgba(117, 193, 255, 0.491);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(20px);
+    transition: left 1s;
+  }
+  .navheader a,
+  .reglogin {
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #968f8f;
+  }
+  .navheader a.router-link-exact-active {
+    color: black;
+    background: crimson;
+  }
+  .menu {
+    display: flex;
+    position: absolute;
+    top: 45px;
+    left: 14px;
+    transition: all 5s ease-in;
+  }
+  .navregister {
+    font-size: 15px;
+    width: 100%;
+  }
+  .nav {
+    column-gap: 0;
+  }
+  .homemedai {
+    z-index: -1;
+  }
+  .homeimage {
+    position: relative;
+    z-index: -2;
+  }
+  .homemedai div {
+    width: 55%;
+    padding: 4vw;
+  }
+  .homebtns,
+  .clothesbtn {
+    font-size: 1.5vw;
+  }
+  .producchildcont {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .title {
+    font-size: 2vw;
+  }
+  .starrating {
+    font-size: 1vw;
+  }
+  .hoverelem {
+    margin-left: -34px;
+    height: 100%;
+    width: 100%;
+  }
+  .divimage img {
+    width: 200px;
+    height: 170px;
+  }
+  /* .singlepage {
+    column-gap: 30px;
+    justify-content: space-between;
+
+    padding-right: 70px;
+    padding-left: 40px;
+  } */
+  .sigle {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .singlepage {
+    gap: 10px;
+    /* justify-content: space-between; */
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  .sngleimage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .divisinglemage {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-top: -34vw;
+  }
+  .sectiontitle div {
+    width: 400px;
+  }
+  .sectionbtns {
+    margin-top: 0;
+  }
+  .scrollingimages {
+    margin-top: -10vw;
+    margin-left: -7vw;
+  }
+  .LoadingButton {
+    margin-top: 10px;
+  }
+  .singlebtns {
+    padding: 0;
+  }
+  .singlebtns button {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+    font-size: 1.1vw;
+  }
+  /* carts */
+
+  .cartimage {
+    width: 80px;
+    height: 90px;
+  }
+  .carttitle {
+    font-size: 1.5vw;
+  }
+  .loginimage {
+    width: 60%;
+    height: 96.4%;
+  }
+}
+@media (max-width: 769px) {
+  .navpadding {
+    padding-right: 30px;
+  }
+  .nav {
+    column-gap: 0;
+  }
+  .navregister {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .homemedai {
+    z-index: -1;
+    padding-left: 0px;
+    padding-right: 50px;
+  }
+  .homeimage {
+    position: relative;
+    z-index: -2;
+  }
+
+  .homemedai div {
+    width: 50%;
+    padding: 1vw;
+  }
+  .lorem {
+    font-size: 12px;
+  }
+  .homemedai div h1 {
+    font-size: 1vw;
+  }
+
+  .homepragraph {
+    font-size: 12px;
+  }
+  .homeproduct {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 12px;
+  }
+  .hommehead {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+  .homeselection {
+    grid-row-start: 2;
+    grid-column-start: 3;
+  }
+  .homebtns,
+  .clothesbtn {
+    font-size: 1.5vw;
+  }
+  .producchildcont {
+    padding: 2rem;
+  }
+  /* product style responsive */
+  .hoverelem {
+    font-size: 1.7vw;
+    margin-top: -31px;
+    margin-left: -32px;
+    height: 100%;
+    width: 100%;
+  }
+  .price {
+    font-size: 14px;
+  }
+  .divimage img {
+    width: auto;
+    height: 100px;
+  }
+  .sectiontitle {
+    position: relative;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+  }
+  .sectiontitle div p span {
+    margin: 0;
+  }
+  .sectiontitle div {
+    /* position: absolute; */
+    width: auto;
+    display: flex;
+  }
+  .sectiontitle p {
+    font-size: 1.5vw;
+  }
+  .singlepage {
+    column-gap: 30px;
+    justify-content: space-between;
+
+    padding-right: 70px;
+    padding-left: 40px;
+  }
+  .sigle {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .singlepage {
+    gap: 10px;
+    /* justify-content: space-between; */
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  .sngleimage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .divisinglemage {
+    position: relative;
+
+    margin-top: -10vw;
+  }
+
+  .singlecategoreis {
+    font-size: 3vw;
+  }
+  .singleprice {
+    font-size: 3vw;
+  }
+  .sectionbtns {
+    margin-top: 0;
+  }
+  .sectionbtns div button {
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 1.5vw;
+  }
+  .singlesize {
+    position: relative;
+    width: 30vw;
+    height: 24vw;
+  }
+  .singlesize ul {
+    position: absolute;
+  }
+  .singlesize span {
+    font-size: 1.7vw;
+  }
+  .singlesize ul li span {
+    font-size: 1.5vw;
+    padding: 10px;
+  }
+  .sectionbtns span {
+    font-size: 1.5vw;
+  }
+  .scrollingimages {
+    margin: 0;
+    margin-top: -10%;
+    margin-left: -7vw;
+  }
+  .LoadingButton {
+    margin-top: 10px;
+    width: 50%;
+  }
+  .carousel-content div img {
+    width: 30px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  .allsingletext {
+    align-items: center;
+    gap: 20px;
+  }
+  .singlebtns {
+    padding: 0;
+    margin-top: 10vw;
+  }
+  .singlebtns button {
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 100%;
+    font-size: 1.1vw;
+  }
+  /* loginform */
+  .buttonlogin p {
+    font-size: 13px;
+  }
+  .buttonlogin img {
+    width: 20px;
+  }
+  .MedaiInput {
+    width: 100%;
+    font-size: 13px;
+  }
+  .loginimage {
+    width: 60%;
+    height: 94.2%;
+  }
+  .registerinput {
+    width: 100%;
+  }
+}
+@media (max-width: 621px) {
+  .logo {
+    width: 60px;
+  }
+  .navpadding {
+    padding-right: 10px;
+  }
+  .nav {
+    column-gap: 0;
+  }
+  .navregister {
+    font-size: 10px;
+  }
+  .navregister p {
+    font-size: 9px;
+  }
+  .navregister a {
+    font-size: 12px;
+  }
+  .line {
+    display: none;
+  }
+  .cart img {
+    width: 25px;
+  }
+  .navclothes {
+    font-size: 14px;
+    width: full;
+  }
+  .home,
+  .electronic,
+  .jewelery,
+  .menclothe,
+  .womenclothes,
+  .clothes {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .homedivimage {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  /* .homeimage,
+  .clothesimage,
+  .womenimage,
+  .jeweleryimage,
+  .electronicsimage,
+  .menimage {
+    padding-left: 20px;
+    padding-right: 20px;
+  } */
+  .homemedai {
+    z-index: -1;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .homeimage {
+    position: relative;
+    z-index: -2;
+  }
+
+  .homemedai div {
+    width: 60%;
+    font: 1.2vw;
+    padding: 1vw;
+    height: 35vw;
+  }
+  .homemedai div h1 {
+    font-size: 2vw;
+  }
+  .homeproduct {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 12px;
+    gap: 12px;
+    justify-content: center;
+  }
+  .hommehead {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+  .homeselection {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 1;
+  }
+  .clothesbtn,
+  .clothesbtn {
+    font-size: 1.7vw;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    text-align: center;
+  }
+
+  .homepragraph {
+    font-size: 1.2vw;
+  }
+
+  .homebtns,
+  .clothesbtn {
+    font-size: 1.7vw;
+  }
+  .redline {
+    display: none;
+  }
+  .search {
+    margin-top: 10px;
+  }
+  .producchildcont {
+    padding: 2rem;
+  }
+  /* .hoverelem {
+    font-size: 1.7vw;
+    margin-top: -30px;
+    margin-left: -34px;
+    height: 100%;
+    width: 100%;
+  } */
+  .price,
+  .title {
+    font-size: 10px;
+  }
+  .categoreis {
+    font-size: 8px;
+  }
+  .divimage img {
+    width: 200px;
+    height: 100px;
+  }
+  /* singlepage */
+  .sectiontitle {
+    position: relative;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sectionbtns span {
+    font-size: 1.5vw;
+  }
+  .scrollingimages {
+    margin: 0;
+    margin-top: -15%;
+    margin-left: -7vw;
+  }
+  .LoadingButton {
+    margin-top: 30px;
+    width: 50%;
+    font-size: 1.7vw;
+  }
+  /* carts */
+  .cardivproduct {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .cartimage {
+    width: 50%;
+    height: inherit;
+  }
+  .carttitle {
+    font-size: 2vw;
+  }
+  /* login form  */
+  .emailform label span {
+    font-size: 1.6vw;
+  }
+  .emailform label {
+    font-size: 1.8vw;
+  }
+  .passform label {
+    font-size: 1.8vw;
+  }
+  .AlertButton {
+    width: 100%;
+    font-size: 2.4vw;
+  }
+  .navlogin {
+    font-size: 1.7vw;
+  }
+  .navlogin a {
+    font-size: 1.6vw;
+  }
+  .loginimage {
+    height: 90.7%;
+    width: 60%;
+  }
+}
+
+@media (max-width: 521px) {
+  .logo {
+    width: 60px;
+  }
+  .menu {
+    top: 35px;
+  }
+  .reglogin {
+    display: flex;
+  }
+  .navregister a {
+    display: none;
+  }
+  .homemedai {
+    display: none;
+  }
+  .homeproduct {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 12px;
+    gap: 12px;
+    justify-content: center;
+  }
+  .hommehead {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+  .homeselection {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 1;
+  }
+  .clothesbtn,
+  .clothesbtn {
+    font-size: 1.7vw;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    text-align: center;
+  }
+  .homepragraph {
+    margin-top: 0;
+  }
+  .homeproduct {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 12px;
+  }
+  .hommehead {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+  .homeselection {
+    grid-row-start: 2;
+    grid-column-start: 3;
+  }
+  .clothesbtn,
+  .clothesbtn {
+    font-size: 1.7vw;
+    text-align: center;
+  }
+  .producchildcont {
+    padding: 2rem;
+  }
+  .producting {
+    grid-template-columns: auto auto;
+  }
+  .price,
+  .categoreis,
+  .title,
+  .starrating {
+    font-size: 13px;
+  }
+  .divimage img {
+    width: 210px;
+    height: 125px;
+  }
+  /* .hoverelem {
+    font-size: 1.7vw;
+    margin-top: -30px;
+    margin-left: -34px;
+    height: 35.3%;
+    width: 46.3vw;
+  } */
+  /* singlepage */
+  .sectiontitle {
+    position: relative;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sectionbtns span {
+    font-size: 1.5vw;
+  }
+  .scrollingimages {
+    margin: 0;
+    margin-top: -15%;
+    margin-left: -10vw;
+  }
+  .LoadingButton {
+    margin-top: 30px;
+    width: 50%;
+    font-size: 1.7vw;
+  }
+  .singlepage {
+    column-gap: 30px;
+    justify-content: space-between;
+    padding-right: 70px;
+    padding-left: 40px;
+  }
+  .carousel-content div img {
+    width: 27px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+  .loginimage {
+    height: 89%;
+    width: 60%;
+  }
+  .registerimage {
+    display: none;
+  }
+}
+@media (max-width: 427px) {
+  .logo {
+    width: 30px;
+  }
+  .menu {
+    top: 35px;
+  }
+  .reglogin {
+    display: flex;
+  }
+  .navregister a {
+    display: none;
+  }
+
+  .homemedai {
+    display: none;
+  }
+  .homepragraph {
+    margin-top: 0;
+  }
+  .homeproduct {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 12px;
+    gap: 12px;
+    justify-content: center;
+  }
+  .hommehead {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+  .homeselection {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 1;
+  }
+  .clothesbtn,
+  .clothesbtn {
+    font-size: 1.7vw;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    text-align: center;
+  }
+  .producchildcont {
+    padding: 2rem;
+  }
+  .producting {
+    grid-template-columns: auto auto;
+  }
+  .price,
+  .categoreis,
+  .title,
+  .starrating {
+    font-size: 13px;
+  }
+  .divimage img {
+    width: 210px;
+    height: 125px;
+  }
+  .hoverelem {
+    font-size: 1.7vw;
+    margin-top: -30px;
+    margin-left: -34px;
+    height: 100%;
+    width: 100%;
+  }
+  /* singlepage */
+  .singlepage {
+    column-gap: 30px;
+    flex-direction: column;
+  }
+  .allsingletext {
+    width: auto;
+    margin-top: 40vw;
+  }
+  .sectiontitle {
+    width: 270px;
+    padding: 10px;
+    text-align: center;
+  }
+  .sectiontitle div p {
+    font-size: 20px;
+  }
+  .singlerate {
+    text-align: start;
+  }
+  .singleprice {
+    font-size: 18px;
+  }
+  .sectiontitle p {
+    text-align: start;
+    font-size: 12px;
+  }
+  .sectionbtns {
+    width: 270px;
+  }
+  .sectionbtns span {
+    font-size: 15px;
+  }
+  .sectionbtns div button {
+    font-size: 12px;
+  }
+  .singlesize {
+    width: 100%;
+    height: 39vw;
+  }
+  .scrollingimages {
+    display: flex;
+    position: absolute;
+    top: 136vw;
+    align-items: center;
+    margin: 0;
+    margin-left: -40px;
+    width: 100%;
+  }
+  .carousel-content {
+    width: 168px;
+  }
+
+  .carousel-content div img {
+    width: 30px;
+  }
+  .singlebtns {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .singlebtns button {
+    font-size: 15px;
+  }
+  /* login form */
+  .loginimage {
+    display: none;
+  }
+  .emailform input {
+    width: 53vw;
+  }
+  .emailform label {
+    font-size: 3vw;
+  }
+  .passform label {
+    font-size: 3vw;
+  }
+  .navlogin p {
+    font-size: 3vw;
+  }
+}
+@media (max-width: 376px) {
+  .navpadding {
+    padding-left: 20px;
+  }
+  .logo {
+    width: 60px;
+  }
+  .menu {
+    top: 4px;
+    left: 8px;
+  }
+  .reglogin {
+    display: flex;
+  }
+  .navregister a {
+    display: none;
+  }
+  .navregister p {
+    margin-right: 2px;
+    font-size: 8px;
+  }
+  .navclothes a {
+    font-size: 12px;
+  }
+
+  .navregister p img {
+    width: 20px;
+  }
+  .homemedai {
+    display: none;
+  }
+  .homepragraph {
+    margin-top: 0;
+  }
+  .homeproduct {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-size: 12px;
+    gap: 12px;
+    justify-content: center;
+  }
+  .hommehead {
+    grid-row-start: 1;
+    grid-column-start: 1;
+  }
+  .homeselection {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 1;
+  }
+  .clothesbtn,
+  .clothesbtn {
+    font-size: 1.7vw;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    text-align: center;
+  }
+
+  .producchildcont {
+    padding: 2rem;
+  }
+  .producting {
+    grid-template-columns: auto;
+  }
+  .price,
+  .categoreis,
+  .title,
+  .starrating {
+    font-size: 15px;
+  }
+  .divimage img {
+    width: 310px;
+    height: 225px;
+  }
+  .hoverelem {
+    font-size: 1.7vw;
+    margin-top: -30px;
+    margin-left: -34px;
+    height: 100%;
+    width: 100%;
+  }
+  /* single page */
+  .allsingletext {
+    margin-top: 90%;
+  }
+  .scrollingimages {
+    display: flex;
+    position: absolute;
+    top: 135%;
+  }
+  .singlepage {
+    column-gap: 30px;
+    justify-content: space-between;
+    padding-right: 70px;
+    padding-left: 40px;
+  }
+  .singlebtns button {
+    font-size: 12px;
+  }
+  /* carts */
+  .cartLoadingButton {
+    width: 100%;
+    font-size: 4vw;
+  }
+}

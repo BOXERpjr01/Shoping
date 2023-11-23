@@ -1,29 +1,29 @@
 <template>
-  <div class="border-t-3 px-10 pb-12">
+  <div class="border-t-3 mt-32 px-10 pb-12">
     <LoadingButton
       @click="onSubmit"
       :is-loading="isLoading"
-      class="text-white w-300px text-center mt-12 bg-rose-600 font-semibold py-2 hover:bg-rose-600/75 rounded"
+      class="cartLoadingButton text-white w-300px text-center mt-12 bg-rose-600 font-semibold py-2 hover:bg-rose-600/75 rounded"
     >
       Back To Home
     </LoadingButton>
     <div v-if="cartItems.length" class="mt-5">
       <div class="flex flex-col gap-y-5 bg-grayf4 py-3 px-4 rounded">
         <div
-          class="flex gap-y-5 justify-between items-center bg-grayddd py-3 px-4 rounded"
+          class="cardivproduct flex gap-y-5 justify-between items-center bg-grayddd py-3 px-4 rounded"
           v-for="cart in cartItems"
           :key="cart.id"
         >
           <img
-            class="w-32 h-32 rounded-l"
+            class="cartimage w-32 h-32 rounded-l"
             :src="cart.image"
             :alt="cart.title"
           />
-          <p class="text-gray-900">{{ cart.title }}</p>
+          <p class="carttitle text-[1.5vw] text-gray-900">{{ cart.title }}</p>
           <p>{{ cart.price }}</p>
           <button
             @click="removeFromCart(cart.id)"
-            class="bg-red-400 font-bold py-2 px-4 rounded hover:bg-red-400/70"
+            class="bg-sky-600 font-bold py-2 px-4 rounded hover:bg-red-400/70"
           >
             <span class="mr-2">❌</span>Remove
           </button>
