@@ -113,7 +113,7 @@ defineExpose({ closemodal });
 const Email = ref('');
 const emailError = ref('');
 const toggleModel = () => {
-  const isValidEmail = Email => {
+  const isValidEmail = (Email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     return emailRegex.test(Email);
@@ -136,13 +136,13 @@ const EmailErrorStyle = computed(() => {
 });
 ////////// Google API google login account
 const login = () => {
-  googleSdkLoaded(google => {
+  googleSdkLoaded((google) => {
     google.accounts.oauth2
       .initCodeClient({
         client_id:
           '580283333572-hufpae42qvv7odqu4pkm0rq9hbfaf2v9.apps.googleusercontent.com',
         scope: 'email profile openid',
-        callback: response => {
+        callback: (response) => {
           console.log('Handle the response', response);
         },
       })
